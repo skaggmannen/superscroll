@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="TestApp" style="height: 100%">
+<header>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/superScroll.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</header>
+<body ng-controller="TestView" style="height: 100%; overflow: hidden">
+	<input type="range" max="200" min="20" step="1" value="120" ng-model="size" />
+	<input type="checkbox" check="false" ng-model="fullWidth"/>
+	<div super-scroll style="height: 90%; width: 100%; overflow: auto;" child-style="{ 
+			display: 'inline-block', 
+			width: fullWidth? '100%' : size + 'px', 
+			height: size + 'px', 
+			'margin': '10px 10px',
+		};" resource="resource">
+	</div>
+</body>
+</html>
